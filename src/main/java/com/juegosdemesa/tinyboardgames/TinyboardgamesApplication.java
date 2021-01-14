@@ -10,4 +10,7 @@ public class TinyboardgamesApplication {
 		SpringApplication.run(TinyboardgamesApplication.class, args);
 	}
 
+
+	
+
 }

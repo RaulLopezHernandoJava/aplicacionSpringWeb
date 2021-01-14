@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Usuarios</title>
+</head>
+
+<body>
+
+    <h1 th:inline="text">Hola [[${#httpServletRequest.remoteUser}]]!</h1>
+	
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Cerrar sesión" />
+	</form>
+    
+    
+	<a th:href="@{/logout}">Cerrar sesión</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Email</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Fecha Registro</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="usuario: ${usuarios}">
+                <td th:text="${usuario.id}" />
+                <td th:text="${usuario.nombre}" />
+                <td th:text="${usuario.apellidos}" />
+                <td th:text="${usuario.email}" />
+                <td th:text="${usuario.rol.nombre}" />
+                <td th:text="${usuario.edad}" />
+                <td th:text="${usuario.fechaRegistro}" />
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
