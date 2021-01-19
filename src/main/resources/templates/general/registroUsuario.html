@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/plantilla :: general(~{::section})}" xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5" lang="es">
+
+<section>
+	<div class="container">
+		<div class="row justify-content-center">
+			<h1 class="col-12">Registro de Usuario</h1>
+
+			<div class="col-12">
+				<form th:action="@{/usuario/guardar}" th:object="${usuario}" method="post">
+
+					<div class="form-group row">
+						<label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+						<div class="col-sm-10">
+							<input type="text" id="nombre" name="nombre" class="form-control" th:field="*{nombre}"
+								placeholder="Inserte su nombre">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="apellidos" class="col-sm-2 col-form-label">Apellidos</label>
+						<div class="col-sm-10">
+							<input type="text" id="apellidos" name="apellidos" class="form-control"
+								th:field="*{apellidos}" placeholder="Inserte sus apellidos">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="email" class="col-sm-2 col-form-label">Email</label>
+						<div class="col-sm-10">
+							<input type="text" id="email" name="email" class="form-control" th:field="*{email}"
+								placeholder="Inserte su email ">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="password" class="col-sm-2 col-form-label">Password</label>
+						<div class="col-sm-10">
+							<input type="password" id="password" name="password" class="form-control"
+								th:field="*{password}" placeholder="Inserte su password">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="edad" class="col-sm-2 col-form-label">Edad</label>
+						<div class="col-sm-10">
+							<input type="number" id="edad" name="edad" class="form-control" th:field="*{edad}"
+								placeholder="Inserte su edad">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-sm-10">
+							<button type="submit" class="btn btn-primary">Aceptar</button>
+							<a class="btn btn-danger" th:href="@{/}">Cancelar</a>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+	crossorigin="anonymous"></script>

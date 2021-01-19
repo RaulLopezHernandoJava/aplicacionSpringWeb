@@ -17,23 +17,50 @@ import lombok.NoArgsConstructor;
 
 public class Usuario {
 
-    @Max(10)
-    private Long id;
-    @Size(min = 3, max = 150)
-    private String nombre, apellidos, email, password;
-    private Rol rol;
-    @Min(2)
-    private Integer edad;
-    private LocalDate fechaRegistro;
+  @Max(10)
+  private Long id;
+  @Size(min = 3, max = 150)
+  private String nombre, apellidos, email, password;
+  private Rol rol;
+  @Min(2)
+  private Integer edad;
+  private LocalDate fechaRegistro;
 
-    public Usuario(Long id, String nombre, String apellidos, String email, Rol rol, Integer edad,
-			LocalDate fechaRegistro) {
-		this.id = id;
-		this.nombre= nombre;
-		this.apellidos = apellidos;
-		this.email = email;
-		this.rol = rol;
-		this.edad = edad;
-		this.fechaRegistro = fechaRegistro;
-	}
+  public Usuario(String nombre, String apellidos, String email, String password, Integer edad) {
+    this.nombre = nombre;
+    this.apellidos = apellidos;
+    this.email = email;
+    this.password = password;
+    this.edad = edad;
+  }
+
+  public Usuario(Long id, String nombre, String apellidos, String email, Rol rol, Integer edad,
+      LocalDate fechaRegistro) {
+    this.id = id;
+    this.nombre = nombre;
+    this.apellidos = apellidos;
+    this.email = email;
+    this.rol = rol;
+    this.edad = edad;
+    this.fechaRegistro = fechaRegistro;
+  }
+
+  public Usuario(String nombre, String apellidos, String email, String password, Rol rol, Integer edad,
+      LocalDate fechaRegistro) {
+    this.nombre = nombre;
+    this.apellidos = apellidos;
+    this.email = email;
+    this.password = password;
+    this.rol = rol;
+    this.edad = edad;
+    this.fechaRegistro = fechaRegistro;
+  }
+
+  public Usuario(Long id,String nombre, String apellidos,Integer edad) {
+    this.id=id;
+    this.nombre = nombre;
+    this.apellidos = apellidos;
+    this.edad = edad;
+  }
+
 }

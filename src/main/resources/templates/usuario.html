@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/plantilla :: general(~{::body})}" xmlns:th="https://www.thymeleaf.org"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Informacion del Usuario</title>
+    </head>
+    <body>
+
+        <h1 th:inline="text">Hola [[${#httpServletRequest.remoteUser}]]!</h1>
+        
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Cerrar sesión" />
+        </form>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Fecha Registro</th>
+    
+                </tr>
+            </thead>
+            <tbody>
+                    <td th:text="${usuario.id}" />
+                    <td th:text="${usuario.nombre}" />
+                    <td th:text="${usuario.apellidos}" />
+                    <td th:text="${usuario.email}" />
+                    <td th:text="${usuario.rol.nombre}" />
+                    <td th:text="${usuario.edad}" />
+                    <td th:text="${usuario.fechaRegistro}" />
+                </tr>
+            </tbody>
+        </table>
+    
+    </body>
+    
+    </html>

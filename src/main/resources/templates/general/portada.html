@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/plantilla :: general(~{::div})}" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>Portada</title>
+</head>
+
+<div class="alert alert-sucess" role="alert" th:text="${success}" th:if="${success}"></div>
+<div class="alert alert-danger" role="alert" th:text="${defeat}" th:if="${defeat}"></div>
+<body>
+    <div class="jumbotron mt-4">
+        <h1 class="display-4">Bienvendio a Tiny Boardgames</h1>
+        <p class="lead">En esta Web encontraras toda la informacion de los ultimos juegos de mesa</p>
+        <hr class="my-4">
+        <p>Logeate a traves del boton Login presente en la barra de Herramientas</p>
+    </div>
+
+</body>
+
+</html>
